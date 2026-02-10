@@ -1,0 +1,186 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:47:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="rate_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:48:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="rate_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi depth=(28 * 28) port=img offset=slave" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:49:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="rate_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi depth=25*(28 * 28) port=spikes offset=slave" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:50:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="rate_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=seed" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:56:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="rate_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="E:/1_Research/Neuromorphic/NEUROMORPHIC/First_research/fpga_snn_encoding/scripts/run_hls_encodingterpisah.tcl:54:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="latency_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=latency_encoding" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:75:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="latency_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:76:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="latency_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi depth=(28 * 28) port=img offset=slave" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:77:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="latency_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi depth=25*(28 * 28) port=spikes offset=slave" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:78:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="latency_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=seed" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:83:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="latency_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:91:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="latency_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=3" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:121:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="delta_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:122:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="delta_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi depth=(28 * 28) port=img offset=slave" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:123:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="delta_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi depth=25*(28 * 28) port=spikes offset=slave" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:124:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="delta_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=threshold" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:125:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="delta_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=leak" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:129:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="delta_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=integrator cyclic factor=8" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:132:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="delta_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:138:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="delta_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=3" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:163:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="count_spikes" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:169:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="count_spikes" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:289:5" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:282:5" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:269:5" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:268:41" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:257:0" msg_body="Unrolling loop 'anonymous' (C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:289:5) in function 'scaled_fixed2ieee&lt;29, 1&gt;' completely with a factor of 2">
+        <args Factor="2" LoopLoc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:289:5" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:257:0" msg_body="Unrolling loop 'anonymous' (C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:282:5) in function 'scaled_fixed2ieee&lt;29, 1&gt;' completely with a factor of 2">
+        <args Factor="2" LoopLoc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:282:5" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:257:0" msg_body="Unrolling loop 'anonymous' (C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:269:5) in function 'scaled_fixed2ieee&lt;29, 1&gt;' completely with a factor of 1">
+        <args Factor="1" LoopLoc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:269:5" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:257:0" msg_body="Unrolling loop 'anonymous' (C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:268:41) in function 'scaled_fixed2ieee&lt;29, 1&gt;' completely with a factor of 2">
+        <args Factor="2" LoopLoc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:268:41" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:257:0" msg_body="Unrolling loop 'anonymous' () in function 'scaled_fixed2ieee&lt;29, 1&gt;' completely with a factor of 1">
+        <args Factor="1" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_range_redux.h:437:0" msg_body="Inlining function 'fp_struct&lt;float&gt;::fp_struct(float)' into 'void range_redux_payne_hanek_hotbm&lt;29, float, 29, 29&gt;(float, ap_uint&lt;3&gt;&amp;, ap_ufixed&lt;29, 0, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_ufixed&lt;29, 0, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_int&lt;fp_struct&lt;float&gt;::EXP_BITS&gt;&amp;)'">
+        <args Callee="fp_struct&lt;float&gt;::fp_struct(float)" Callee-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h} Line 283 Column 0" Caller="void range_redux_payne_hanek_hotbm&lt;29, float, 29, 29&gt;(float, ap_uint&lt;3&gt;&amp;, ap_ufixed&lt;29, 0, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_ufixed&lt;29, 0, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_int&lt;fp_struct&lt;float&gt;::EXP_BITS&gt;&amp;)" Caller-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_range_redux.h} Line 437 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_range_redux.h:437:0" msg_body="Inlining function 'fp_struct&lt;float&gt;::expv() const' into 'void range_redux_payne_hanek_hotbm&lt;29, float, 29, 29&gt;(float, ap_uint&lt;3&gt;&amp;, ap_ufixed&lt;29, 0, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_ufixed&lt;29, 0, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_int&lt;fp_struct&lt;float&gt;::EXP_BITS&gt;&amp;)'">
+        <args Callee="fp_struct&lt;float&gt;::expv() const" Callee-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h} Line 316 Column 0" Caller="void range_redux_payne_hanek_hotbm&lt;29, float, 29, 29&gt;(float, ap_uint&lt;3&gt;&amp;, ap_ufixed&lt;29, 0, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_ufixed&lt;29, 0, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_int&lt;fp_struct&lt;float&gt;::EXP_BITS&gt;&amp;)" Caller-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_range_redux.h} Line 437 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_range_redux.h:437:0" msg_body="Inlining function 'ap_uint&lt;(((2) * ((23) + (1))) + (29)) + (3)&gt; table_lookup_4oPi_hotbm&lt;23, 29&gt;(int, float)' into 'void range_redux_payne_hanek_hotbm&lt;29, float, 29, 29&gt;(float, ap_uint&lt;3&gt;&amp;, ap_ufixed&lt;29, 0, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_ufixed&lt;29, 0, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_int&lt;fp_struct&lt;float&gt;::EXP_BITS&gt;&amp;)'">
+        <args Callee="ap_uint&lt;(((2) * ((23) + (1))) + (29)) + (3)&gt; table_lookup_4oPi_hotbm&lt;23, 29&gt;(int, float)" Callee-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_range_redux.h} Line 374 Column 0" Caller="void range_redux_payne_hanek_hotbm&lt;29, float, 29, 29&gt;(float, ap_uint&lt;3&gt;&amp;, ap_ufixed&lt;29, 0, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_ufixed&lt;29, 0, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_int&lt;fp_struct&lt;float&gt;::EXP_BITS&gt;&amp;)" Caller-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_range_redux.h} Line 437 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_range_redux.h:437:0" msg_body="Inlining function 'unsigned int clz&lt;29, 58, 0&gt;(ap_ufixed&lt;58, 0, (ap_q_mode)5, (ap_o_mode)3, 0&gt;)' into 'void range_redux_payne_hanek_hotbm&lt;29, float, 29, 29&gt;(float, ap_uint&lt;3&gt;&amp;, ap_ufixed&lt;29, 0, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_ufixed&lt;29, 0, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_int&lt;fp_struct&lt;float&gt;::EXP_BITS&gt;&amp;)'">
+        <args Callee="unsigned int clz&lt;29, 58, 0&gt;(ap_ufixed&lt;58, 0, (ap_q_mode)5, (ap_o_mode)3, 0&gt;)" Callee-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_normalize.h} Line 70 Column 0" Caller="void range_redux_payne_hanek_hotbm&lt;29, float, 29, 29&gt;(float, ap_uint&lt;3&gt;&amp;, ap_ufixed&lt;29, 0, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_ufixed&lt;29, 0, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_int&lt;fp_struct&lt;float&gt;::EXP_BITS&gt;&amp;)" Caller-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_range_redux.h} Line 437 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h:322:0" msg_body="Inlining function 'fp_struct&lt;float&gt;::data() const (.62.71.82.91)' into 'fp_struct&lt;float&gt;::to_float() const (.59.68.79.88)'">
+        <args Callee="fp_struct&lt;float&gt;::data() const (.62.71.82.91)" Callee-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h} Line 309 Column 0" Caller="fp_struct&lt;float&gt;::to_float() const (.59.68.79.88)" Caller-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h} Line 322 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h:346:0" msg_body="Inlining function 'fp_struct&lt;float&gt;::to_float() const (.59.68.79.88)' into 'fp_struct&lt;float&gt;::to_ieee() const'">
+        <args Callee="fp_struct&lt;float&gt;::to_float() const (.59.68.79.88)" Callee-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h} Line 322 Column 0" Caller="fp_struct&lt;float&gt;::to_ieee() const" Caller-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h} Line 346 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:257:0" msg_body="Inlining function 'clz(int)' into 'void scaled_fixed2ieee&lt;29, 1&gt;(ap_ufixed&lt;29, 1, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, float&amp;, int)'">
+        <args Callee="clz(int)" Callee-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_normalize.h} Line 79 Column 0" Caller="void scaled_fixed2ieee&lt;29, 1&gt;(ap_ufixed&lt;29, 1, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, float&amp;, int)" Caller-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h} Line 257 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:257:0" msg_body="Inlining function 'fp_struct&lt;float&gt;::set_mantissa(ap_ufixed&lt;24, 1, (ap_q_mode)5, (ap_o_mode)3, 0&gt;)' into 'void scaled_fixed2ieee&lt;29, 1&gt;(ap_ufixed&lt;29, 1, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, float&amp;, int)'">
+        <args Callee="fp_struct&lt;float&gt;::set_mantissa(ap_ufixed&lt;24, 1, (ap_q_mode)5, (ap_o_mode)3, 0&gt;)" Callee-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h} Line 336 Column 0" Caller="void scaled_fixed2ieee&lt;29, 1&gt;(ap_ufixed&lt;29, 1, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, float&amp;, int)" Caller-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h} Line 257 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h:257:0" msg_body="Inlining function 'fp_struct&lt;float&gt;::to_ieee() const' into 'void scaled_fixed2ieee&lt;29, 1&gt;(ap_ufixed&lt;29, 1, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, float&amp;, int)'">
+        <args Callee="fp_struct&lt;float&gt;::to_ieee() const" Callee-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h} Line 346 Column 0" Caller="void scaled_fixed2ieee&lt;29, 1&gt;(ap_ufixed&lt;29, 1, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, float&amp;, int)" Caller-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h} Line 257 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:210:0" msg_body="Inlining function 'fp_struct&lt;float&gt;::fp_struct(float)' into 'float hotbm_::sin_or_cos&lt;float&gt;(float, bool, bool)'">
+        <args Callee="fp_struct&lt;float&gt;::fp_struct(float)" Callee-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h} Line 283 Column 0" Caller="float hotbm_::sin_or_cos&lt;float&gt;(float, bool, bool)" Caller-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h} Line 210 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:210:0" msg_body="Inlining function 'void range_redux_payne_hanek_hotbm&lt;29, float, 29, 29&gt;(float, ap_uint&lt;3&gt;&amp;, ap_ufixed&lt;29, 0, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_ufixed&lt;29, 0, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_int&lt;fp_struct&lt;float&gt;::EXP_BITS&gt;&amp;)' into 'float hotbm_::sin_or_cos&lt;float&gt;(float, bool, bool)'">
+        <args Callee="void range_redux_payne_hanek_hotbm&lt;29, float, 29, 29&gt;(float, ap_uint&lt;3&gt;&amp;, ap_ufixed&lt;29, 0, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_ufixed&lt;29, 0, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_int&lt;fp_struct&lt;float&gt;::EXP_BITS&gt;&amp;)" Callee-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_range_redux.h} Line 437 Column 0" Caller="float hotbm_::sin_or_cos&lt;float&gt;(float, bool, bool)" Caller-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h} Line 210 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:210:0" msg_body="Inlining function 'ap_ufixed&lt;29, 1, (ap_q_mode)5, (ap_o_mode)3, 0&gt; hotbm_::value_list&lt;float&gt;::sin_or_cos_approximation&lt;29, 29&gt;(bool, ap_uint&lt;3&gt;&amp;, ap_ufixed&lt;29, 0, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_ufixed&lt;29, 0, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_int&lt;8&gt;&amp;)' into 'float hotbm_::sin_or_cos&lt;float&gt;(float, bool, bool)'">
+        <args Callee="ap_ufixed&lt;29, 1, (ap_q_mode)5, (ap_o_mode)3, 0&gt; hotbm_::value_list&lt;float&gt;::sin_or_cos_approximation&lt;29, 29&gt;(bool, ap_uint&lt;3&gt;&amp;, ap_ufixed&lt;29, 0, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_ufixed&lt;29, 0, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_int&lt;8&gt;&amp;)" Callee-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib\hlsmath\src\common\hls_hotbm_float.cpp} Line 12 Column 0" Caller="float hotbm_::sin_or_cos&lt;float&gt;(float, bool, bool)" Caller-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h} Line 210 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:210:0" msg_body="Inlining function 'void scaled_fixed2ieee&lt;29, 1&gt;(ap_ufixed&lt;29, 1, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, float&amp;, int)' into 'float hotbm_::sin_or_cos&lt;float&gt;(float, bool, bool)'">
+        <args Callee="void scaled_fixed2ieee&lt;29, 1&gt;(ap_ufixed&lt;29, 1, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, float&amp;, int)" Callee-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_float_utils.h} Line 257 Column 0" Caller="float hotbm_::sin_or_cos&lt;float&gt;(float, bool, bool)" Caller-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h} Line 210 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:210:0" msg_body="Inlining function 'fp_struct&lt;float&gt;::to_ieee() const' into 'float hotbm_::sin_or_cos&lt;float&gt;(float, bool, bool)'">
+        <args Callee="fp_struct&lt;float&gt;::to_ieee() const" Callee-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h} Line 346 Column 0" Caller="float hotbm_::sin_or_cos&lt;float&gt;(float, bool, bool)" Caller-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h} Line 210 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib\hlsmath\src\c\sincosfloat.cpp:11:0" msg_body="Inlining function 'hotbm_::cos(float)' into 'cosf'">
+        <args Callee="hotbm_::cos(float)" Callee-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib\hlsmath\src\common\hls_hotbm_float.cpp} Line 126 Column 0" Caller="cosf" Caller-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib\hlsmath\src\c\sincosfloat.cpp} Line 11 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="../src/encoding.cpp:25:0" msg_body="Inlining function 'lfsr_rand_float()' into 'gaussian_rand(float)'">
+        <args Callee="lfsr_rand_float()" Callee-DebugLoc="File ../src/encoding.cpp Line 14 Column 0" Caller="gaussian_rand(float)" Caller-DebugLoc="File ../src/encoding.cpp Line 25 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="../src/encoding.cpp:25:0" msg_body="Inlining function 'cosf' into 'gaussian_rand(float)'">
+        <args Callee="cosf" Callee-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib\hlsmath\src\c\sincosfloat.cpp} Line 11 Column 0" Caller="gaussian_rand(float)" Caller-DebugLoc="File ../src/encoding.cpp Line 25 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0" msg_body="Inlining function 'fp_struct&lt;float&gt;::fp_struct(float)' into 'int generic_cast_IEEE754&lt;int, (ap_q_mode)6, float&gt;(float, bool, hls::enable_if&lt;std::numeric_limits&lt;int&gt;::is_signed, bool&gt;::type)'">
+        <args Callee="fp_struct&lt;float&gt;::fp_struct(float)" Callee-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h} Line 283 Column 0" Caller="int generic_cast_IEEE754&lt;int, (ap_q_mode)6, float&gt;(float, bool, hls::enable_if&lt;std::numeric_limits&lt;int&gt;::is_signed, bool&gt;::type)" Caller-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h} Line 12 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0" msg_body="Inlining function 'fp_struct&lt;float&gt;::mantissa() const' into 'int generic_cast_IEEE754&lt;int, (ap_q_mode)6, float&gt;(float, bool, hls::enable_if&lt;std::numeric_limits&lt;int&gt;::is_signed, bool&gt;::type)'">
+        <args Callee="fp_struct&lt;float&gt;::mantissa() const" Callee-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h} Line 340 Column 0" Caller="int generic_cast_IEEE754&lt;int, (ap_q_mode)6, float&gt;(float, bool, hls::enable_if&lt;std::numeric_limits&lt;int&gt;::is_signed, bool&gt;::type)" Caller-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h} Line 12 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0" msg_body="Inlining function 'fp_struct&lt;float&gt;::expv() const' into 'int generic_cast_IEEE754&lt;int, (ap_q_mode)6, float&gt;(float, bool, hls::enable_if&lt;std::numeric_limits&lt;int&gt;::is_signed, bool&gt;::type)'">
+        <args Callee="fp_struct&lt;float&gt;::expv() const" Callee-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h} Line 316 Column 0" Caller="int generic_cast_IEEE754&lt;int, (ap_q_mode)6, float&gt;(float, bool, hls::enable_if&lt;std::numeric_limits&lt;int&gt;::is_signed, bool&gt;::type)" Caller-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h} Line 12 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0" msg_body="Inlining function 'fp_struct&lt;float&gt;::__signbit() const' into 'int generic_cast_IEEE754&lt;int, (ap_q_mode)6, float&gt;(float, bool, hls::enable_if&lt;std::numeric_limits&lt;int&gt;::is_signed, bool&gt;::type)'">
+        <args Callee="fp_struct&lt;float&gt;::__signbit() const" Callee-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h} Line 349 Column 0" Caller="int generic_cast_IEEE754&lt;int, (ap_q_mode)6, float&gt;(float, bool, hls::enable_if&lt;std::numeric_limits&lt;int&gt;::is_signed, bool&gt;::type)" Caller-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h} Line 12 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:116:0" msg_body="Inlining function 'int generic_cast_IEEE754&lt;int, (ap_q_mode)6, float&gt;(float, bool, hls::enable_if&lt;std::numeric_limits&lt;int&gt;::is_signed, bool&gt;::type)' into 'int generic_cast_IEEE754&lt;int, float&gt;(float, bool)'">
+        <args Callee="int generic_cast_IEEE754&lt;int, (ap_q_mode)6, float&gt;(float, bool, hls::enable_if&lt;std::numeric_limits&lt;int&gt;::is_signed, bool&gt;::type)" Callee-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h} Line 12 Column 0" Caller="int generic_cast_IEEE754&lt;int, float&gt;(float, bool)" Caller-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h} Line 116 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp:51:0" msg_body="Inlining function 'int generic_cast_IEEE754&lt;int, float&gt;(float, bool)' into '__hls_fptosi_float_i32'">
+        <args Callee="int generic_cast_IEEE754&lt;int, float&gt;(float, bool)" Callee-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h} Line 116 Column 0" Caller="__hls_fptosi_float_i32" Caller-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp} Line 51 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="../src/encoding.cpp:74:0" msg_body="Inlining function 'gaussian_rand(float)' into 'latency_encoding(float*, signed char (*) [784], unsigned short)'">
+        <args Callee="gaussian_rand(float)" Callee-DebugLoc="File ../src/encoding.cpp Line 25 Column 0" Caller="latency_encoding(float*, signed char (*) [784], unsigned short)" Caller-DebugLoc="File ../src/encoding.cpp Line 74 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="../src/encoding.cpp:74:0" msg_body="Inlining function '__hls_fptosi_float_i32' into 'latency_encoding(float*, signed char (*) [784], unsigned short)'">
+        <args Callee="__hls_fptosi_float_i32" Callee-DebugLoc="File {C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp} Line 51 Column 0" Caller="latency_encoding(float*, signed char (*) [784], unsigned short)" Caller-DebugLoc="File ../src/encoding.cpp Line 74 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib\hlsmath\src\common\hls_hotbm_float.cpp:14:0" msg_body="Applying array_partition to '_ZZN6hotbm_10value_listIfE24sin_or_cos_approximationILi29ELi29EEE9ap_ufixedIXT_ELi1EL9ap_q_mode5EL9ap_o_mode3ELi0EEbR7ap_uintILi3EERS3_IXT_ELi0ELS4_5ELS5_3ELi0EERS3_IXT0_ELi0ELS4_5ELS5_3ELi0EER6ap_intILi8EEE10swap_table': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="_ZZN6hotbm_10value_listIfE24sin_or_cos_approximationILi29ELi29EEE9ap_ufixedIXT_ELi1EL9ap_q_mode5EL9ap_o_mode3ELi0EEbR7ap_uintILi3EERS3_IXT_ELi0ELS4_5ELS5_3ELi0EERS3_IXT0_ELi0ELS4_5ELS5_3ELi0EER6ap_intILi8EEE10swap_table"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:217:0" msg_body="Applying array_partition to '_ZZN6hotbm_10sin_or_cosIfEET_S1_bbE13neg_cos_table': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="_ZZN6hotbm_10sin_or_cosIfEET_S1_bbE13neg_cos_table"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:216:0" msg_body="Applying array_partition to '_ZZN6hotbm_10sin_or_cosIfEET_S1_bbE13neg_sin_table': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="_ZZN6hotbm_10sin_or_cosIfEET_S1_bbE13neg_sin_table"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:215:0" msg_body="Applying array_partition to '_ZZN6hotbm_10sin_or_cosIfEET_S1_bbE10swap_table': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="_ZZN6hotbm_10sin_or_cosIfEET_S1_bbE10swap_table"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-358" msg_severity="WARNING" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:242:30" msg_body="Array transformation on index using bit extension logic may lead to poor performance. Please use int or long for array index computation to benefit from optimizations."/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-358" msg_severity="WARNING" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib\hlsmath\src\common\hls_hotbm_float.cpp:25:43" msg_body="Array transformation on index using bit extension logic may lead to poor performance. Please use int or long for array index computation to benefit from optimizations."/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-358" msg_severity="WARNING" msg_loc="C:\scratch\2024.1\hls_product\545\2024.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_hotbm.h:267:8" msg_body="Array transformation on index using bit extension logic may lead to poor performance. Please use int or long for array index computation to benefit from optimizations."/>
+</xilinx:hls_fe_msgs>
+

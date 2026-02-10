@@ -1,0 +1,222 @@
+
+
+================================================================
+== Synthesis Summary Report of 'delta_encoding'
+================================================================
++ General Information: 
+    * Date:           Sat Jan 24 12:39:32 2026
+    * Version:        2024.1 (Build 5069499 on May 21 2024)
+    * Project:        snn_delta_encoding
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg484-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-------------------------------------------------+------+------+---------+-----------+----------+---------+-------+----------+---------+--------+-----------+-----------+-----+
+    |                     Modules                     | Issue|      | Latency |  Latency  | Iteration|         |  Trip |          |         |        |           |           |     |
+    |                     & Loops                     | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count | Pipelined|  BRAM   |   DSP  |     FF    |    LUT    | URAM|
+    +-------------------------------------------------+------+------+---------+-----------+----------+---------+-------+----------+---------+--------+-----------+-----------+-----+
+    |+ delta_encoding                                 |     -|  0.00|    59612|  5.961e+05|         -|    59613|      -|        no|  12 (4%)|  6 (2%)|  3316 (3%)|  4194 (7%)|    -|
+    | + delta_encoding_Pipeline_INIT_LOOP             |     -|  0.58|      786|  7.860e+03|         -|      786|      -|        no|        -|       -|   12 (~0%)|   53 (~0%)|    -|
+    |  o INIT_LOOP                                    |     -|  7.30|      784|  7.840e+03|         1|        1|    784|       yes|        -|       -|          -|          -|    -|
+    | + delta_encoding_Pipeline_TIME_LOOP_PIXEL_LOOP  |     -|  0.00|    58823|  5.882e+05|         -|    58823|      -|        no|        -|  6 (2%)|  1946 (1%)|  2402 (4%)|    -|
+    |  o TIME_LOOP_PIXEL_LOOP                         |     -|  7.30|    58821|  5.882e+05|        25|        3|  19600|       yes|        -|       -|          -|          -|    -|
+    +-------------------------------------------------+------+------+---------+-----------+----------+---------+-------+----------+---------+--------+-----------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| Interface  | Read/Write | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
+|            |            | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
++------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| m_axi_gmem | READ_WRITE | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=4            |
++------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+-----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register  | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+-----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control | CTRL      | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER      | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control | IP_IER    | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control | IP_ISR    | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_control | img_1     | 0x10   | 32    | W      | Data signal of img               |                                                                      |
+| s_axi_control | img_2     | 0x14   | 32    | W      | Data signal of img               |                                                                      |
+| s_axi_control | spikes_1  | 0x1c   | 32    | W      | Data signal of spikes            |                                                                      |
+| s_axi_control | spikes_2  | 0x20   | 32    | W      | Data signal of spikes            |                                                                      |
+| s_axi_control | threshold | 0x28   | 32    | W      | Data signal of threshold         |                                                                      |
+| s_axi_control | leak      | 0x30   | 32    | W      | Data signal of leak              |                                                                      |
++---------------+-----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++-----------+-----------+--------------+
+| Argument  | Direction | Datatype     |
++-----------+-----------+--------------+
+| img       | inout     | float*       |
+| spikes    | inout     | signed char* |
+| threshold | in        | float        |
+| leak      | in        | float        |
++-----------+-----------+--------------+
+
+* SW-to-HW Mapping
++-----------+---------------+-----------+----------+-------------------------------------+
+| Argument  | HW Interface  | HW Type   | HW Usage | HW Info                             |
++-----------+---------------+-----------+----------+-------------------------------------+
+| img       | m_axi_gmem    | interface |          | channel=0                           |
+| img       | s_axi_control | register  | offset   | name=img_1 offset=0x10 range=32     |
+| img       | s_axi_control | register  | offset   | name=img_2 offset=0x14 range=32     |
+| spikes    | m_axi_gmem    | interface |          | channel=0                           |
+| spikes    | s_axi_control | register  | offset   | name=spikes_1 offset=0x1c range=32  |
+| spikes    | s_axi_control | register  | offset   | name=spikes_2 offset=0x20 range=32  |
+| threshold | s_axi_control | register  |          | name=threshold offset=0x28 range=32 |
+| leak      | s_axi_control | register  |          | name=leak offset=0x30 range=32      |
++-----------+---------------+-----------+----------+-------------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++--------------+-----------+--------+-------+------------+----------------------------+
+| HW Interface | Direction | Length | Width | Loop       | Loop Location              |
++--------------+-----------+--------+-------+------------+----------------------------+
+| m_axi_gmem   | read      | 784    | 32    | PIXEL_LOOP | ../src/encoding.cpp:137:21 |
++--------------+-----------+--------+-------+------------+----------------------------+
+
+* All M_AXI Variable Accesses
++--------------+----------+----------------------------+-----------+--------------+--------+------------+----------------------------+------------+---------------------------------------------------------------------------------------------------------+
+| HW Interface | Variable | Access Location            | Direction | Burst Status | Length | Loop       | Loop Location              | Resolution | Problem                                                                                                 |
++--------------+----------+----------------------------+-----------+--------------+--------+------------+----------------------------+------------+---------------------------------------------------------------------------------------------------------+
+| m_axi_gmem   | img      | ../src/encoding.cpp:141:41 | read      | Widen Fail   |        | PIXEL_LOOP | ../src/encoding.cpp:137:21 | 214-353    | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_gmem   | img      | ../src/encoding.cpp:141:41 | read      | Fail         |        | TIME_LOOP  | ../src/encoding.cpp:136:16 | 214-229    | Could not analyze pattern                                                                               |
+| m_axi_gmem   | img      | ../src/encoding.cpp:141:41 | read      | Inferred     | 784    | PIXEL_LOOP | ../src/encoding.cpp:137:21 |            |                                                                                                         |
+| m_axi_gmem   | spikes   | ../src/encoding.cpp:145:30 | write     | Fail         |        | PIXEL_LOOP | ../src/encoding.cpp:137:21 | 214-232    | Access store is in the conditional branch                                                               |
++--------------+----------+----------------------------+-----------+--------------+--------+------------+----------------------------+------------+---------------------------------------------------------------------------------------------------------+
+
+    * Resolution URL: docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.1%20English&url=ug1448-hls-guidance&resourceid=XXX-YYY.html (replace XXX-YYY with column value)
+
+================================================================
+== Bind Op Report
+================================================================
++-------------------------------------------------+-----+--------+----------------+-----------+-----------+---------+
+| Name                                            | DSP | Pragma | Variable       | Op        | Impl      | Latency |
++-------------------------------------------------+-----+--------+----------------+-----------+-----------+---------+
+| + delta_encoding                                | 6   |        |                |           |           |         |
+|   xor_val_fu_198_p2                             |     |        | xor_val        | xor       | auto      | 0       |
+|  + delta_encoding_Pipeline_INIT_LOOP            | 0   |        |                |           |           |         |
+|    icmp_ln131_fu_186_p2                         |     |        | icmp_ln131     | seteq     | auto      | 0       |
+|    add_ln131_fu_192_p2                          |     |        | add_ln131      | add       | fabric    | 0       |
+|  + delta_encoding_Pipeline_TIME_LOOP_PIXEL_LOOP | 6   |        |                |           |           |         |
+|    icmp_ln136_fu_463_p2                         |     |        | icmp_ln136     | seteq     | auto      | 0       |
+|    add_ln136_fu_469_p2                          |     |        | add_ln136      | add       | fabric    | 0       |
+|    icmp_ln137_fu_478_p2                         |     |        | icmp_ln137     | seteq     | auto      | 0       |
+|    select_ln136_fu_484_p3                       |     |        | select_ln136   | select    | auto_sel  | 0       |
+|    add_ln136_1_fu_610_p2                        |     |        | add_ln136_1    | add       | fabric    | 0       |
+|    select_ln136_1_fu_616_p3                     |     |        | select_ln136_1 | select    | auto_sel  | 0       |
+|    first_iter_0_fu_492_p2                       |     |        | first_iter_0   | seteq     | auto      | 0       |
+|    mul_5ns_11ns_15_1_1_U13                      | 1   |        | empty_27       | mul       | auto      | 0       |
+|    sparsemux_17_3_32_1_1_U12                    |     |        | tmp            | sparsemux | auto      | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U10            | 3   |        | mul            | fmul      | maxdsp    | 3       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U9        | 2   |        | add            | fadd      | fulldsp   | 4       |
+|    icmp_ln144_fu_671_p2                         |     |        | icmp_ln144     | setne     | auto      | 0       |
+|    icmp_ln144_1_fu_677_p2                       |     |        | icmp_ln144_1   | seteq     | auto      | 0       |
+|    or_ln144_fu_683_p2                           |     |        | or_ln144       | or        | auto      | 0       |
+|    icmp_ln144_2_fu_522_p2                       |     |        | icmp_ln144_2   | setne     | auto      | 0       |
+|    icmp_ln144_3_fu_528_p2                       |     |        | icmp_ln144_3   | seteq     | auto      | 0       |
+|    or_ln144_1_fu_689_p2                         |     |        | or_ln144_1     | or        | auto      | 0       |
+|    and_ln144_fu_693_p2                          |     |        | and_ln144      | and       | auto      | 0       |
+|    fcmp_32ns_32ns_1_2_no_dsp_1_U11              |     |        | tmp_3          | fcmp      | auto      | 1       |
+|    grp_fu_415_p2                                |     |        | and_ln144_1    | and       | auto      | 0       |
+|    fcmp_32ns_32ns_1_2_no_dsp_1_U11              |     |        | tmp_6          | fcmp      | auto      | 1       |
+|    grp_fu_415_p2                                |     |        | and_ln148      | and       | auto      | 0       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U9        | 2   |        | add1           | fadd      | fulldsp   | 4       |
+|    empty_30_fu_706_p2                           |     |        | empty_30       | shl       | auto_pipe | 0       |
+|    empty_31_fu_775_p2                           |     |        | empty_31       | shl       | auto_pipe | 0       |
+|    shl_ln145_fu_719_p2                          |     |        | shl_ln145      | shl       | auto_pipe | 0       |
+|    shl_ln145_2_fu_737_p2                        |     |        | shl_ln145_2    | shl       | auto_pipe | 0       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U9        | 2   |        | sub            | fadd      | fulldsp   | 4       |
+|    add_ln137_fu_533_p2                          |     |        | add_ln137      | add       | fabric    | 0       |
++-------------------------------------------------+-----+--------+----------------+-----------+-----------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++-------------------+---------------+-----------+------+------+--------+--------------+------+---------+------------------+
+| Name              | Usage         | Type      | BRAM | URAM | Pragma | Variable     | Impl | Latency | Bitwidth, Depth, |
+|                   |               |           |      |      |        |              |      |         | Banks            |
++-------------------+---------------+-----------+------+------+--------+--------------+------+---------+------------------+
+| + delta_encoding  |               |           | 12   | 0    |        |              |      |         |                  |
+|   control_s_axi_U | interface     | s_axilite |      |      |        |              |      |         |                  |
+|   gmem_m_axi_U    | interface     | m_axi     | 4    |      |        |              |      |         |                  |
+|   integrator_U    | ram_s2p array |           | 2    |      |        | integrator   | auto | 1       | 32, 98, 1        |
+|   integrator_1_U  | ram_s2p array |           | 2    |      |        | integrator_1 | auto | 1       | 32, 98, 1        |
+|   integrator_2_U  | ram_s2p array |           | 2    |      |        | integrator_2 | auto | 1       | 32, 98, 1        |
+|   integrator_3_U  | ram_s2p array |           | 2    |      |        | integrator_3 | auto | 1       | 32, 98, 1        |
+|   integrator_4_U  | ram_s2p array |           | 2    |      |        | integrator_4 | auto | 1       | 32, 98, 1        |
+|   integrator_5_U  | ram_s2p array |           | 2    |      |        | integrator_5 | auto | 1       | 32, 98, 1        |
+|   integrator_6_U  | ram_s2p array |           | 2    |      |        | integrator_6 | auto | 1       | 32, 98, 1        |
+|   integrator_7_U  | ram_s2p array |           | 2    |      |        | integrator_7 | auto | 1       | 32, 98, 1        |
++-------------------+---------------+-----------+------+------+--------+--------------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------------+---------------------------------------------------+-------------------------------------------------------+
+| Type            | Options                                           | Location                                              |
++-----------------+---------------------------------------------------+-------------------------------------------------------+
+| interface       | s_axilite port=return                             | ../src/encoding.cpp:47 in rate_encoding, return       |
+| interface       | m_axi depth=(28 * 28) port=img offset=slave       | ../src/encoding.cpp:48 in rate_encoding, img          |
+| interface       | m_axi depth=25*(28 * 28) port=spikes offset=slave | ../src/encoding.cpp:49 in rate_encoding, spikes       |
+| interface       | s_axilite port=seed                               | ../src/encoding.cpp:50 in rate_encoding, seed         |
+| pipeline        | II=1                                              | ../src/encoding.cpp:56 in rate_encoding               |
+| interface       | s_axilite port=return                             | ../src/encoding.cpp:75 in latency_encoding, return    |
+| interface       | m_axi depth=(28 * 28) port=img offset=slave       | ../src/encoding.cpp:76 in latency_encoding, img       |
+| interface       | m_axi depth=25*(28 * 28) port=spikes offset=slave | ../src/encoding.cpp:77 in latency_encoding, spikes    |
+| interface       | s_axilite port=seed                               | ../src/encoding.cpp:78 in latency_encoding, seed      |
+| pipeline        | II=1                                              | ../src/encoding.cpp:83 in latency_encoding            |
+| pipeline        | II=3                                              | ../src/encoding.cpp:91 in latency_encoding            |
+| interface       | s_axilite port=return                             | ../src/encoding.cpp:121 in delta_encoding, return     |
+| interface       | m_axi depth=(28 * 28) port=img offset=slave       | ../src/encoding.cpp:122 in delta_encoding, img        |
+| interface       | m_axi depth=25*(28 * 28) port=spikes offset=slave | ../src/encoding.cpp:123 in delta_encoding, spikes     |
+| interface       | s_axilite port=threshold                          | ../src/encoding.cpp:124 in delta_encoding, threshold  |
+| interface       | s_axilite port=leak                               | ../src/encoding.cpp:125 in delta_encoding, leak       |
+| array_partition | variable=integrator cyclic factor=8               | ../src/encoding.cpp:129 in delta_encoding, integrator |
+| pipeline        | II=1                                              | ../src/encoding.cpp:132 in delta_encoding             |
+| pipeline        | II=3                                              | ../src/encoding.cpp:138 in delta_encoding             |
+| inline          | off                                               | ../src/encoding.cpp:163 in count_spikes               |
+| pipeline        | II=1                                              | ../src/encoding.cpp:169 in count_spikes               |
++-----------------+---------------------------------------------------+-------------------------------------------------------+
+
+

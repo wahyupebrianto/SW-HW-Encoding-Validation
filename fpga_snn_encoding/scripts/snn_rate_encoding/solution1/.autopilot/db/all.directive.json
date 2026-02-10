@@ -1,0 +1,23 @@
+[
+  {
+    "functionLabel": "",
+    "functionName": "rate_encoding",
+    "id": 0,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "rate_encoding"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "E:/1_Research/Neuromorphic/NEUROMORPHIC/First_research/fpga_snn_encoding/scripts/run_hls_encodingterpisah.tcl",
+    "sourceLine": 29,
+    "success": true
+  }
+]

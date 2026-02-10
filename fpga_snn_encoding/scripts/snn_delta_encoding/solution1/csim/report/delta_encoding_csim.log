@@ -1,0 +1,32 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch CLANG as the compiler.
+   Compiling ../../../../../src/testbench_delta.cpp in debug mode
+   Compiling ../../../../../src/encoding.cpp in debug mode
+   Generating csim.exe
+=======================================
+DELTA ENCODING TEST - 10K IMAGES
+=======================================
+Processing images...
+  1000/10000
+  2000/10000
+  3000/10000
+  4000/10000
+  5000/10000
+  6000/10000
+  7000/10000
+  8000/10000
+  9000/10000
+  10000/10000
+
+=======================================
+DELTA ENCODING RESULTS
+=======================================
+Sparsity:    81.19%
+Norm Rate:   0.1881
+
+Software:    81.19% / 0.1881
+Error:       0.00% / 0.0000
+
+✓ PASS - Acceptable deviation
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

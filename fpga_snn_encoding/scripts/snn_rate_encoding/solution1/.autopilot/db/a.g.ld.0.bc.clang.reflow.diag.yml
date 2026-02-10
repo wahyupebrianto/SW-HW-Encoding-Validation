@@ -1,0 +1,222 @@
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: ../src/encoding.cpp, Line: 46, Column: 0 }
+Function:        _Z13rate_encodingPfPA784_at
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'lfsr_rand_float()'
+    DebugLoc:        { File: ../src/encoding.cpp, Line: 14, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'rate_encoding(float*, signed char (*) [784], unsigned short)'
+    DebugLoc:        { File: ../src/encoding.cpp, Line: 46, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: ../src/encoding.cpp, Line: 55, Column: 21 }
+Function:        _Z13rate_encodingPfPA784_at
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '784'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        img3seq
+  - ArrayName:       img
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        PIXEL_LOOP
+  - String:          ' '
+  - LoopLoc:         '../src/encoding.cpp:55:21'
+  - String:          ' '
+  - Function:        'rate_encoding(float*, signed char (*) [784], unsigned short)'
+    DebugLoc:        { File: ../src/encoding.cpp, Line: 46, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: ../src/encoding.cpp, Line: 59, Column: 31 }
+  - OrigDirection:   read
+  - OrigID:          for.inc.load.19
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: ../src/encoding.cpp, Line: 54, Column: 16 }
+Function:        _Z13rate_encodingPfPA784_at
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of length '
+  - Length:          '19600'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        spikes4seq
+  - ArrayName:       spikes
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        TIME_LOOP
+  - String:          ' '
+  - LoopLoc:         '../src/encoding.cpp:54:16'
+  - String:          ' '
+  - Function:        'rate_encoding(float*, signed char (*) [784], unsigned short)'
+    DebugLoc:        { File: ../src/encoding.cpp, Line: 46, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: ../src/encoding.cpp, Line: 62, Column: 26 }
+  - OrigDirection:   write
+  - OrigID:          for.inc.store.26
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            CouldNotAnalyzePattern
+DebugLoc:        { File: ../src/encoding.cpp, Line: 55, Column: 21 }
+Function:        _Z13rate_encodingPfPA784_at
+Args:            
+  - String:          Could not analyze pattern
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: ../src/encoding.cpp, Line: 55, Column: 21 }
+  - OrigDirection:   read
+  - OrigID:          img3seq
+  - ArrayName:       img
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        TIME_LOOP
+  - String:          ' '
+  - LoopLoc:         '../src/encoding.cpp:54:16'
+  - String:          ' '
+  - Function:        'rate_encoding(float*, signed char (*) [784], unsigned short)'
+    DebugLoc:        { File: ../src/encoding.cpp, Line: 46, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: ../src/encoding.cpp, Line: 55, Column: 21 }
+Function:        _Z13rate_encodingPfPA784_at
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            float
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: ../src/encoding.cpp, Line: 55, Column: 21 }
+  - OrigDirection:   read
+  - OrigID:          img3seq
+  - ArrayName:       img
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        PIXEL_LOOP
+  - String:          ' '
+  - LoopLoc:         '../src/encoding.cpp:55:21'
+  - String:          ' '
+  - Function:        'rate_encoding(float*, signed char (*) [784], unsigned short)'
+    DebugLoc:        { File: ../src/encoding.cpp, Line: 46, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: ../src/encoding.cpp, Line: 54, Column: 16 }
+Function:        _Z13rate_encodingPfPA784_at
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i8
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: ../src/encoding.cpp, Line: 54, Column: 16 }
+  - OrigDirection:   write
+  - OrigID:          spikes4seq
+  - ArrayName:       spikes
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        PIXEL_LOOP
+  - String:          ' '
+  - LoopLoc:         '../src/encoding.cpp:55:21'
+  - String:          ' '
+  - Function:        'rate_encoding(float*, signed char (*) [784], unsigned short)'
+    DebugLoc:        { File: ../src/encoding.cpp, Line: 46, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-supported-subset
+Name:            MismatchPortAndBurstAccessWidth
+DebugLoc:        { File: ../src/encoding.cpp, Line: 54, Column: 16 }
+Function:        _Z13rate_encodingPfPA784_at
+Args:            
+  - String:          Inferred burst reverted due to burst accesses data width is different from m_axi port width
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: ../src/encoding.cpp, Line: 54, Column: 16 }
+  - OrigDirection:   write
+  - OrigID:          spikes4seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      spikes
+  - String:          ' '
+  - Function:        'rate_encoding(float*, signed char (*) [784], unsigned short)'
+    DebugLoc:        { File: ../src/encoding.cpp, Line: 46, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: ../src/encoding.cpp, Line: 55, Column: 21 }
+Function:        _Z13rate_encodingPfPA784_at
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '784'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        PIXEL_LOOP
+  - String:          ' '
+  - LoopLoc:         '../src/encoding.cpp:55:21'
+  - String:          ' '
+  - Function:        'rate_encoding(float*, signed char (*) [784], unsigned short)'
+    DebugLoc:        { File: ../src/encoding.cpp, Line: 46, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: ../src/encoding.cpp, Line: 55, Column: 21 }
+Function:        _Z13rate_encodingPfPA784_at
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '784'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' in loop '''
+  - LoopName:        PIXEL_LOOP
+  - String:          '''('
+  - LoopLoc:         '../src/encoding.cpp:55:21'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...

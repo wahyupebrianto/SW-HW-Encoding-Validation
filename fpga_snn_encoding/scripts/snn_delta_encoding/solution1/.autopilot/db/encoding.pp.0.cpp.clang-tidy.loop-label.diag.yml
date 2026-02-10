@@ -1,0 +1,22 @@
+---
+MainSourceFile:  'E:/1_Research/Neuromorphic/NEUROMORPHIC/First_research/fpga_snn_encoding/scripts/snn_delta_encoding/solution1/.autopilot/db/encoding.pp.0.cpp'
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_167_1:  '
+    FileOffset:      167
+    FilePath:        'E:\1_Research\Neuromorphic\NEUROMORPHIC\First_research\fpga_snn_encoding\src\encoding.cpp'
+    Replacements:    
+      - FilePath:        'E:\1_Research\Neuromorphic\NEUROMORPHIC\First_research\fpga_snn_encoding\scripts\snn_delta_encoding\solution1\.autopilot\db\encoding.pp.0.cpp'
+        Offset:          116811
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_167_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_168_2:  '
+    FileOffset:      168
+    FilePath:        'E:\1_Research\Neuromorphic\NEUROMORPHIC\First_research\fpga_snn_encoding\src\encoding.cpp'
+    Replacements:    
+      - FilePath:        'E:\1_Research\Neuromorphic\NEUROMORPHIC\First_research\fpga_snn_encoding\scripts\snn_delta_encoding\solution1\.autopilot\db\encoding.pp.0.cpp'
+        Offset:          116850
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_168_2: '
+...

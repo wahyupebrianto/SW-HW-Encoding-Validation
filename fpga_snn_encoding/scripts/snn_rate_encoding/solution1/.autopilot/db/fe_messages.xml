@@ -1,0 +1,72 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="E:/1_Research/Neuromorphic/NEUROMORPHIC/First_research/fpga_snn_encoding/scripts/run_hls_encodingterpisah.tcl:29:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="rate_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=rate_encoding" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:47:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="rate_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:48:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="rate_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi depth=(28 * 28) port=img offset=slave" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:49:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="rate_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi depth=25*(28 * 28) port=spikes offset=slave" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:50:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="rate_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=seed" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:56:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="rate_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:75:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="latency_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:76:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="latency_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi depth=(28 * 28) port=img offset=slave" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:77:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="latency_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi depth=25*(28 * 28) port=spikes offset=slave" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:78:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="latency_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=seed" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:83:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="latency_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:91:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="latency_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=3" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:121:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="delta_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:122:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="delta_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi depth=(28 * 28) port=img offset=slave" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:123:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="delta_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi depth=25*(28 * 28) port=spikes offset=slave" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:124:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="delta_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=threshold" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:125:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="delta_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=leak" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:129:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="delta_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=integrator cyclic factor=8" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:132:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="delta_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:138:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="delta_encoding" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=3" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:163:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="count_spikes" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/encoding.cpp:169:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="count_spikes" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="../src/encoding.cpp:46:0" msg_body="Inlining function 'lfsr_rand_float()' into 'rate_encoding(float*, signed char (*) [784], unsigned short)'">
+        <args Callee="lfsr_rand_float()" Callee-DebugLoc="File ../src/encoding.cpp Line 14 Column 0" Caller="rate_encoding(float*, signed char (*) [784], unsigned short)" Caller-DebugLoc="File ../src/encoding.cpp Line 46 Column 0"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

@@ -1,0 +1,32 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch CLANG as the compiler.
+   Compiling ../../../../../src/testbench_rate.cpp in debug mode
+   Compiling ../../../../../src/encoding.cpp in debug mode
+   Generating csim.exe
+=======================================
+RATE ENCODING TEST - 10K IMAGES
+=======================================
+Processing images...
+  1000/10000
+  2000/10000
+  3000/10000
+  4000/10000
+  5000/10000
+  6000/10000
+  7000/10000
+  8000/10000
+  9000/10000
+  10000/10000
+
+=======================================
+RATE ENCODING RESULTS
+=======================================
+Sparsity:    86.57%
+Norm Rate:   0.1343
+
+Software:    86.75% / 0.1325
+Error:       0.18% / 0.0018
+
+✓ PASS - Consistent with software
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

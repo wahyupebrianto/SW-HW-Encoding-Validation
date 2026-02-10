@@ -1,0 +1,292 @@
+
+
+================================================================
+== Synthesis Summary Report of 'latency_encoding'
+================================================================
++ General Information: 
+    * Date:           Sat Jan 24 12:39:14 2026
+    * Version:        2024.1 (Build 5069499 on May 21 2024)
+    * Project:        snn_latency_encoding
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg484-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +--------------------------------------------+------+------+---------+-----------+----------+---------+-------+----------+--------+----------+-----------+------------+-----+
+    |                   Modules                  | Issue|      | Latency |  Latency  | Iteration|         |  Trip |          |        |          |           |            |     |
+    |                   & Loops                  | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count | Pipelined|  BRAM  |    DSP   |     FF    |     LUT    | URAM|
+    +--------------------------------------------+------+------+---------+-----------+----------+---------+-------+----------+--------+----------+-----------+------------+-----+
+    |+ latency_encoding                          |     -|  0.00|    22053|  2.205e+05|         -|    22054|      -|        no|  4 (1%)|  39 (17%)|  5618 (5%)|  8064 (15%)|    -|
+    | + latency_encoding_Pipeline_INIT_T_INIT_I  |     -|  0.00|    19611|  1.961e+05|         -|    19611|      -|        no|       -|   1 (~0%)|  161 (~0%)|   324 (~0%)|    -|
+    |  o INIT_T_INIT_I                           |     -|  7.30|    19609|  1.961e+05|        11|        1|  19600|       yes|       -|         -|          -|           -|    -|
+    | + latency_encoding_Pipeline_PIXEL_LOOP     |     -|  0.00|     2431|  2.431e+04|         -|     2431|      -|        no|       -|  38 (17%)|  4279 (4%)|  6466 (12%)|    -|
+    |  o PIXEL_LOOP                              |     -|  7.30|     2429|  2.429e+04|        81|        3|    784|       yes|       -|         -|          -|           -|    -|
+    +--------------------------------------------+------+------+---------+-----------+----------+---------+-------+----------+--------+----------+-----------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| Interface  | Read/Write | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
+|            |            | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
++------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| m_axi_gmem | READ_WRITE | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=4            |
++------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control | CTRL     | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER     | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control | IP_IER   | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control | IP_ISR   | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_control | img_1    | 0x10   | 32    | W      | Data signal of img               |                                                                      |
+| s_axi_control | img_2    | 0x14   | 32    | W      | Data signal of img               |                                                                      |
+| s_axi_control | spikes_1 | 0x1c   | 32    | W      | Data signal of spikes            |                                                                      |
+| s_axi_control | spikes_2 | 0x20   | 32    | W      | Data signal of spikes            |                                                                      |
+| s_axi_control | seed     | 0x28   | 32    | W      | Data signal of seed              |                                                                      |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------------+
+| Argument | Direction | Datatype       |
++----------+-----------+----------------+
+| img      | inout     | float*         |
+| spikes   | inout     | signed char*   |
+| seed     | in        | unsigned short |
++----------+-----------+----------------+
+
+* SW-to-HW Mapping
++----------+---------------+-----------+----------+------------------------------------+
+| Argument | HW Interface  | HW Type   | HW Usage | HW Info                            |
++----------+---------------+-----------+----------+------------------------------------+
+| img      | m_axi_gmem    | interface |          | channel=0                          |
+| img      | s_axi_control | register  | offset   | name=img_1 offset=0x10 range=32    |
+| img      | s_axi_control | register  | offset   | name=img_2 offset=0x14 range=32    |
+| spikes   | m_axi_gmem    | interface |          | channel=0                          |
+| spikes   | s_axi_control | register  | offset   | name=spikes_1 offset=0x1c range=32 |
+| spikes   | s_axi_control | register  | offset   | name=spikes_2 offset=0x20 range=32 |
+| seed     | s_axi_control | register  |          | name=seed offset=0x28 range=32     |
++----------+---------------+-----------+----------+------------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++--------------+-----------+--------+-------+------------+---------------------------+
+| HW Interface | Direction | Length | Width | Loop       | Loop Location             |
++--------------+-----------+--------+-------+------------+---------------------------+
+| m_axi_gmem   | read      | 784    | 32    | PIXEL_LOOP | ../src/encoding.cpp:90:17 |
++--------------+-----------+--------+-------+------------+---------------------------+
+
+* All M_AXI Variable Accesses
++--------------+----------+----------------------------+-----------+--------------+--------+------------+---------------------------+------------+---------------------------------------------------------------------------------------------------------+
+| HW Interface | Variable | Access Location            | Direction | Burst Status | Length | Loop       | Loop Location             | Resolution | Problem                                                                                                 |
++--------------+----------+----------------------------+-----------+--------------+--------+------------+---------------------------+------------+---------------------------------------------------------------------------------------------------------+
+| m_axi_gmem   | spikes   | ../src/encoding.cpp:84:15  | write     | Widen Fail   |        | INIT_I     | ../src/encoding.cpp:82:17 | 214-353    | Could not widen since type i8 size is greater than or equal to the max_widen_bitwidth threshold of 0    |
+| m_axi_gmem   | spikes   | ../src/encoding.cpp:84:15  | write     | Inferred     | 19600  | INIT_T     | ../src/encoding.cpp:81:10 |            |                                                                                                         |
+| m_axi_gmem   | img      | ../src/encoding.cpp:93:20  | read      | Widen Fail   |        | PIXEL_LOOP | ../src/encoding.cpp:90:17 | 214-353    | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_gmem   | img      | ../src/encoding.cpp:93:20  | read      | Inferred     | 784    | PIXEL_LOOP | ../src/encoding.cpp:90:17 |            |                                                                                                         |
+| m_axi_gmem   | spikes   | ../src/encoding.cpp:108:31 | write     | Fail         |        | PIXEL_LOOP | ../src/encoding.cpp:90:17 | 214-229    | Could not analyze pattern                                                                               |
++--------------+----------+----------------------------+-----------+--------------+--------+------------+---------------------------+------------+---------------------------------------------------------------------------------------------------------+
+
+    * Resolution URL: docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.1%20English&url=ug1448-hls-guidance&resourceid=XXX-YYY.html (replace XXX-YYY with column value)
+
+================================================================
+== Bind Op Report
+================================================================
++--------------------------------------------+-----+--------+--------------------------+-----------+-----------+---------+
+| Name                                       | DSP | Pragma | Variable                 | Op        | Impl      | Latency |
++--------------------------------------------+-----+--------+--------------------------+-----------+-----------+---------+
+| + latency_encoding                         | 39  |        |                          |           |           |         |
+|  + latency_encoding_Pipeline_INIT_T_INIT_I | 1   |        |                          |           |           |         |
+|    icmp_ln81_fu_124_p2                     |     |        | icmp_ln81                | seteq     | auto      | 0       |
+|    add_ln81_fu_130_p2                      |     |        | add_ln81                 | add       | fabric    | 0       |
+|    icmp_ln82_fu_147_p2                     |     |        | icmp_ln82                | seteq     | auto      | 0       |
+|    select_ln81_fu_153_p3                   |     |        | select_ln81              | select    | auto_sel  | 0       |
+|    add_ln81_1_fu_161_p2                    |     |        | add_ln81_1               | add       | fabric    | 0       |
+|    select_ln81_1_fu_167_p3                 |     |        | select_ln81_1            | select    | auto_sel  | 0       |
+|    mul_5ns_11ns_15_1_1_U1                  | 1   |        | mul_ln82                 | mul       | auto      | 0       |
+|    shl_ln84_fu_244_p2                      |     |        | shl_ln84                 | shl       | auto_pipe | 0       |
+|    add_ln82_fu_175_p2                      |     |        | add_ln82                 | add       | fabric    | 0       |
+|  + latency_encoding_Pipeline_PIXEL_LOOP    | 38  |        |                          |           |           |         |
+|    icmp_ln90_fu_505_p2                     |     |        | icmp_ln90                | seteq     | auto      | 0       |
+|    add_ln90_fu_511_p2                      |     |        | add_ln90                 | add       | fabric    | 0       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U5   | 2   |        | sub                      | fsub      | fulldsp   | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U6        | 3   |        | mu                       | fmul      | maxdsp    | 3       |
+|    xor_ln18_3_fu_558_p2                    |     |        | xor_ln18_3               | xor       | auto      | 0       |
+|    xor_ln18_2_fu_564_p2                    |     |        | xor_ln18_2               | xor       | auto      | 0       |
+|    xor_ln18_fu_570_p2                      |     |        | xor_ln18                 | xor       | auto      | 0       |
+|    uitofp_32ns_32_6_no_dsp_1_U9            |     |        | conv_i_i                 | uitofp    | auto      | 5       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U7        | 3   |        | u1                       | fmul      | maxdsp    | 3       |
+|    xor_ln18_4_fu_610_p2                    |     |        | xor_ln18_4               | xor       | auto      | 0       |
+|    xor_ln18_5_fu_616_p2                    |     |        | xor_ln18_5               | xor       | auto      | 0       |
+|    xor_ln18_1_fu_622_p2                    |     |        | xor_ln18_1               | xor       | auto      | 0       |
+|    uitofp_32ns_32_6_no_dsp_1_U9            |     |        | conv_i11_i               | uitofp    | auto      | 5       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U6        | 3   |        | u2                       | fmul      | maxdsp    | 3       |
+|    icmp_ln31_fu_680_p2                     |     |        | icmp_ln31                | setne     | auto      | 0       |
+|    icmp_ln31_1_fu_686_p2                   |     |        | icmp_ln31_1              | seteq     | auto      | 0       |
+|    or_ln31_fu_692_p2                       |     |        | or_ln31                  | or        | auto      | 0       |
+|    fcmp_32ns_32ns_1_2_no_dsp_1_U10         |     |        | tmp_3                    | fcmp      | auto      | 1       |
+|    and_ln31_fu_698_p2                      |     |        | and_ln31                 | and       | auto      | 0       |
+|    u1_1_fu_704_p3                          |     |        | u1_1                     | select    | auto_sel  | 0       |
+|    flog_32ns_32ns_32_13_full_dsp_1_U12     | 13  |        | tmp                      | flog      | fulldsp   | 12      |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U7        | 3   |        | mul_i                    | fmul      | maxdsp    | 3       |
+|    fsqrt_32ns_32ns_32_16_no_dsp_1_U11      |     |        | tmp_1                    | fsqrt     | fabric    | 15      |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U6        | 3   |        | x_assign                 | fmul      | maxdsp    | 3       |
+|    closepath_fu_736_p2                     |     |        | closepath                | setlt     | auto      | 0       |
+|    Ex_fu_1148_p2                           |     |        | Ex                       | add       | fabric    | 0       |
+|    select_ln453_fu_1153_p3                 |     |        | select_ln453             | select    | auto_sel  | 0       |
+|    add_ln376_fu_742_p2                     |     |        | add_ln376                | add       | fabric    | 0       |
+|    addr_fu_748_p3                          |     |        | addr                     | select    | auto_sel  | 0       |
+|    shl_ln379_fu_778_p2                     |     |        | shl_ln379                | shl       | auto_pipe | 0       |
+|    mul_80s_24ns_80_5_1_U15                 | 5   |        | h                        | mul       | auto      | 4       |
+|    k_1_fu_831_p3                           |     |        | k_1                      | select    | auto_sel  | 0       |
+|    Mx_bits_1_fu_841_p2                     |     |        | Mx_bits_1                | sub       | fabric    | 0       |
+|    Mx_bits_2_fu_846_p3                     |     |        | Mx_bits_2                | select    | auto_sel  | 0       |
+|    tmp_6_i_fu_893_p3                       |     |        | tmp_6_i                  | cttz      | auto      | 0       |
+|    shl_ln504_fu_1163_p2                    |     |        | shl_ln504                | shl       | auto_pipe | 0       |
+|    Ex_1_fu_1181_p2                         |     |        | Ex_1                     | sub       | fabric    | 0       |
+|    sub_ln506_fu_1195_p2                    |     |        | sub_ln506                | sub       | fabric    | 0       |
+|    select_ln506_fu_1201_p3                 |     |        | select_ln506             | select    | auto_sel  | 0       |
+|    lshr_ln506_fu_1213_p2                   |     |        | lshr_ln506               | lshr      | auto_pipe | 0       |
+|    shl_ln506_fu_1219_p2                    |     |        | shl_ln506                | shl       | auto_pipe | 0       |
+|    select_ln506_1_fu_1225_p3               |     |        | select_ln506_1           | select    | auto_sel  | 0       |
+|    sparsemux_17_3_1_1_1_U16                |     |        | sin_basis                | sparsemux | auto      | 0       |
+|    Mx_1_fu_1236_p3                         |     |        | Mx_1                     | select    | auto_sel  | 0       |
+|    Ex_2_fu_1483_p3                         |     |        | Ex_2                     | select    | auto_sel  | 0       |
+|    mul_15ns_15ns_30_1_1_U19                | 1   |        | mul_ln23                 | mul       | auto      | 0       |
+|    mul_23s_22ns_45_1_1_U13                 | 2   |        | mul_ln29                 | mul       | auto      | 0       |
+|    mul_15ns_15s_30_1_1_U20                 | 1   |        | mul_ln30                 | mul       | auto      | 0       |
+|    mul_30s_29ns_58_2_1_U14                 | 4   |        | mul_ln32                 | mul       | auto      | 1       |
+|    c_fu_1427_p3                            |     |        | c                        | cttz      | auto      | 0       |
+|    c_1_fu_1445_p3                          |     |        | c_1                      | cttz      | auto      | 0       |
+|    shl_ln291_fu_1456_p2                    |     |        | shl_ln291                | shl       | auto_pipe | 0       |
+|    icmp_ln292_fu_1466_p2                   |     |        | icmp_ln292               | seteq     | auto      | 0       |
+|    shift_1_fu_1472_p2                      |     |        | shift_1                  | add       | fabric    | 0       |
+|    shl_ln291_1_fu_1496_p2                  |     |        | shl_ln291_1              | shl       | auto_pipe | 0       |
+|    shift_2_fu_1501_p3                      |     |        | shift_2                  | select    | auto_sel  | 0       |
+|    add_ln300_fu_1506_p2                    |     |        | add_ln300                | add       | fabric    | 0       |
+|    newexp_fu_1516_p2                       |     |        | newexp                   | sub       | fabric    | 0       |
+|    icmp_ln306_fu_1478_p2                   |     |        | icmp_ln306               | seteq     | auto      | 0       |
+|    or_ln306_fu_1530_p2                     |     |        | or_ln306                 | or        | auto      | 0       |
+|    empty_37_fu_1558_p3                     |     |        | empty_37                 | select    | auto_sel  | 0       |
+|    sparsemux_33_4_1_1_1_U17                |     |        | tmp_11_i                 | sparsemux | auto      | 0       |
+|    sparsemux_33_4_1_1_1_U18                |     |        | tmp_12_i                 | sparsemux | auto      | 0       |
+|    results_sign_fu_1096_p3                 |     |        | results_sign             | select    | auto_sel  | 0       |
+|    icmp_ln271_fu_1104_p2                   |     |        | icmp_ln271               | seteq     | auto      | 0       |
+|    icmp_ln271_1_fu_806_p2                  |     |        | icmp_ln271_1             | seteq     | auto      | 0       |
+|    and_ln271_fu_1109_p2                    |     |        | and_ln271                | and       | auto      | 0       |
+|    icmp_ln282_fu_1114_p2                   |     |        | icmp_ln282               | seteq     | auto      | 0       |
+|    xor_ln282_fu_1119_p2                    |     |        | xor_ln282                | xor       | auto      | 0       |
+|    results_sign_1_fu_1125_p2               |     |        | results_sign_1           | and       | auto      | 0       |
+|    select_ln282_fu_1565_p3                 |     |        | select_ln282             | select    | auto_sel  | 0       |
+|    or_ln282_fu_1572_p2                     |     |        | or_ln282                 | or        | auto      | 0       |
+|    results_exp_fu_1577_p3                  |     |        | results_exp              | select    | auto_sel  | 0       |
+|    select_ln282_2_fu_1585_p3               |     |        | select_ln282_2           | select    | auto_sel  | 0       |
+|    results_sig_fu_1592_p3                  |     |        | results_sig              | select    | auto_sel  | 0       |
+|    not_and_ln271_i_demorgan_fu_1131_p2     |     |        | not_and_ln271_i_demorgan | and       | auto      | 0       |
+|    not_and_ln271_i_fu_1136_p2              |     |        | not_and_ln271_i          | xor       | auto      | 0       |
+|    results_sign_2_fu_1142_p2               |     |        | results_sign_2           | and       | auto      | 0       |
+|    results_exp_1_fu_1600_p3                |     |        | results_exp_1            | select    | auto_sel  | 0       |
+|    results_sig_1_fu_1607_p3                |     |        | results_sig_1            | select    | auto_sel  | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U8        | 3   |        | z0                       | fmul      | maxdsp    | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U8        | 3   |        | noise                    | fmul      | maxdsp    | 3       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U5   | 2   |        | latency_float            | fsub      | fulldsp   | 4       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U5   | 2   |        | dc                       | fsub      | fulldsp   | 4       |
+|    add_ln317_fu_1656_p2                    |     |        | add_ln317                | add       | fabric    | 0       |
+|    sub_ln18_fu_1670_p2                     |     |        | sub_ln18                 | sub       | fabric    | 0       |
+|    select_ln18_fu_1680_p3                  |     |        | select_ln18              | select    | auto_sel  | 0       |
+|    lshr_ln18_fu_1708_p2                    |     |        | lshr_ln18                | lshr      | auto_pipe | 0       |
+|    shl_ln18_fu_1714_p2                     |     |        | shl_ln18                 | shl       | auto_pipe | 0       |
+|    val_fu_1740_p3                          |     |        | val                      | select    | auto_sel  | 0       |
+|    result_4_fu_1747_p2                     |     |        | result_4                 | sub       | fabric    | 0       |
+|    result_5_fu_1752_p3                     |     |        | result_5                 | select    | auto_sel  | 0       |
+|    spike_time_1_fu_1770_p3                 |     |        | spike_time_1             | select    | auto_sel  | 0       |
+|    icmp_ln106_fu_1782_p2                   |     |        | icmp_ln106               | setgt     | auto      | 0       |
+|    spike_time_2_fu_1788_p3                 |     |        | spike_time_2             | select    | auto_sel  | 0       |
+|    mul_5ns_11ns_15_1_1_U21                 | 1   |        | mul_ln108                | mul       | auto      | 0       |
+|    shl_ln108_fu_1828_p2                    |     |        | shl_ln108                | shl       | auto_pipe | 0       |
+|    shl_ln108_2_fu_1865_p2                  |     |        | shl_ln108_2              | shl       | auto_pipe | 0       |
++--------------------------------------------+-----+--------+--------------------------+-----------+-----------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++-----------------------------------------+-----------+-----------+------+------+--------+-------------------------------+--------+---------+------------------+
+| Name                                    | Usage     | Type      | BRAM | URAM | Pragma | Variable                      | Impl   | Latency | Bitwidth, Depth, |
+|                                         |           |           |      |      |        |                               |        |         | Banks            |
++-----------------------------------------+-----------+-----------+------+------+--------+-------------------------------+--------+---------+------------------+
+| + latency_encoding                      |           |           | 4    | 0    |        |                               |        |         |                  |
+|   control_s_axi_U                       | interface | s_axilite |      |      |        |                               |        |         |                  |
+|   gmem_m_axi_U                          | interface | m_axi     | 4    |      |        |                               |        |         |                  |
+|  + latency_encoding_Pipeline_PIXEL_LOOP |           |           | 0    | 0    |        |                               |        |         |                  |
+|    ref_4oPi_table_100_U                 | rom_1p    |           |      |      | pragma | ref_4oPi_table_100            | lutram | 1       | 100, 13, 1       |
+|    second_order_float_sin_cos_K0_U      | rom_1p    |           |      |      | pragma | second_order_float_sin_cos_K0 | lutram | 1       | 30, 256, 1       |
+|    second_order_float_sin_cos_K1_U      | rom_1p    |           |      |      | pragma | second_order_float_sin_cos_K1 | lutram | 1       | 23, 256, 1       |
+|    second_order_float_sin_cos_K2_U      | rom_1p    |           |      |      | pragma | second_order_float_sin_cos_K2 | lutram | 1       | 15, 256, 1       |
++-----------------------------------------+-----------+-----------+------+------+--------+-------------------------------+--------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------------+---------------------------------------------------+-------------------------------------------------------+
+| Type            | Options                                           | Location                                              |
++-----------------+---------------------------------------------------+-------------------------------------------------------+
+| interface       | s_axilite port=return                             | ../src/encoding.cpp:47 in rate_encoding, return       |
+| interface       | m_axi depth=(28 * 28) port=img offset=slave       | ../src/encoding.cpp:48 in rate_encoding, img          |
+| interface       | m_axi depth=25*(28 * 28) port=spikes offset=slave | ../src/encoding.cpp:49 in rate_encoding, spikes       |
+| interface       | s_axilite port=seed                               | ../src/encoding.cpp:50 in rate_encoding, seed         |
+| pipeline        | II=1                                              | ../src/encoding.cpp:56 in rate_encoding               |
+| interface       | s_axilite port=return                             | ../src/encoding.cpp:75 in latency_encoding, return    |
+| interface       | m_axi depth=(28 * 28) port=img offset=slave       | ../src/encoding.cpp:76 in latency_encoding, img       |
+| interface       | m_axi depth=25*(28 * 28) port=spikes offset=slave | ../src/encoding.cpp:77 in latency_encoding, spikes    |
+| interface       | s_axilite port=seed                               | ../src/encoding.cpp:78 in latency_encoding, seed      |
+| pipeline        | II=1                                              | ../src/encoding.cpp:83 in latency_encoding            |
+| pipeline        | II=3                                              | ../src/encoding.cpp:91 in latency_encoding            |
+| interface       | s_axilite port=return                             | ../src/encoding.cpp:121 in delta_encoding, return     |
+| interface       | m_axi depth=(28 * 28) port=img offset=slave       | ../src/encoding.cpp:122 in delta_encoding, img        |
+| interface       | m_axi depth=25*(28 * 28) port=spikes offset=slave | ../src/encoding.cpp:123 in delta_encoding, spikes     |
+| interface       | s_axilite port=threshold                          | ../src/encoding.cpp:124 in delta_encoding, threshold  |
+| interface       | s_axilite port=leak                               | ../src/encoding.cpp:125 in delta_encoding, leak       |
+| array_partition | variable=integrator cyclic factor=8               | ../src/encoding.cpp:129 in delta_encoding, integrator |
+| pipeline        | II=1                                              | ../src/encoding.cpp:132 in delta_encoding             |
+| pipeline        | II=3                                              | ../src/encoding.cpp:138 in delta_encoding             |
+| inline          | off                                               | ../src/encoding.cpp:163 in count_spikes               |
+| pipeline        | II=1                                              | ../src/encoding.cpp:169 in count_spikes               |
++-----------------+---------------------------------------------------+-------------------------------------------------------+
+
+

@@ -1,0 +1,33 @@
+{
+  "0": {
+    "basicblocks": 13,
+    "calls": "1",
+    "file": "encoding.cpp",
+    "fileloc": 42,
+    "instructions": 38,
+    "loads": {
+      "T": 1
+    },
+    "name": "rate_encoding",
+    "stores": {
+      "G": 1,
+      "T": 1
+    },
+    "total_instructions": 59
+  },
+  "1": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "encoding.cpp",
+    "fileloc": 14,
+    "instructions": 21,
+    "loads": {
+      "G": 6
+    },
+    "name": "lfsr_rand_float",
+    "stores": {
+      "G": 1
+    },
+    "total_instructions": 21
+  }
+}

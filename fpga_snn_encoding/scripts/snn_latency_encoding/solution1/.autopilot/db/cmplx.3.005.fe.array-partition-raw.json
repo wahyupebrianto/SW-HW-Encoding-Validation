@@ -1,0 +1,29 @@
+{
+  "0": {
+    "basicblocks": 7,
+    "calls": "1",
+    "file": "encoding.cpp",
+    "fileloc": 70,
+    "instructions": 97,
+    "loads": {
+      "T": 1
+    },
+    "name": "latency_encoding",
+    "stores": {
+      "T": 2
+    },
+    "total_instructions": 358
+  },
+  "1": {
+    "basicblocks": 12,
+    "calls": "",
+    "file": "hls_hotbm.h",
+    "fileloc": 209,
+    "instructions": 261,
+    "loads": {
+      "G": 52
+    },
+    "name": "sin_or_cos<float>",
+    "total_instructions": 261
+  }
+}

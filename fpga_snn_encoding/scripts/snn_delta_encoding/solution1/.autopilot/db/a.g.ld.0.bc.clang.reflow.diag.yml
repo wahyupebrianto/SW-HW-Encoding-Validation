@@ -1,0 +1,202 @@
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: ../src/encoding.cpp, Line: 128, Column: 8 }
+Function:        _Z14delta_encodingPfPA784_aff
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          integrator
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '8'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: ../src/encoding.cpp, Line: 137, Column: 21 }
+Function:        _Z14delta_encodingPfPA784_aff
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '784'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        img21seq
+  - ArrayName:       img
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        PIXEL_LOOP
+  - String:          ' '
+  - LoopLoc:         '../src/encoding.cpp:137:21'
+  - String:          ' '
+  - Function:        'delta_encoding(float*, signed char (*) [784], float, float)'
+    DebugLoc:        { File: ../src/encoding.cpp, Line: 120, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: ../src/encoding.cpp, Line: 141, Column: 41 }
+  - OrigDirection:   read
+  - OrigID:          for.body9.load.33
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessInCondBranch
+Function:        _Z14delta_encodingPfPA784_aff
+Args:            
+  - String:          'Access '
+  - Access:          store
+  - String:          ' is in the conditional branch'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+  - OrigDirection:   write
+  - OrigID:          if.end.store.1
+  - ArrayName:       spikes
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        PIXEL_LOOP
+  - String:          ' '
+  - LoopLoc:         '../src/encoding.cpp:137:21'
+  - String:          ' '
+  - Function:        'delta_encoding(float*, signed char (*) [784], float, float)'
+    DebugLoc:        { File: ../src/encoding.cpp, Line: 120, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessInCondBranch
+DebugLoc:        { File: ../src/encoding.cpp, Line: 145, Column: 30 }
+Function:        _Z14delta_encodingPfPA784_aff
+Args:            
+  - String:          'Access '
+  - Access:          store
+    DebugLoc:        { File: ../src/encoding.cpp, Line: 145, Column: 30 }
+  - String:          ' is in the conditional branch'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: ../src/encoding.cpp, Line: 145, Column: 30 }
+  - OrigDirection:   write
+  - OrigID:          if.then.store.0
+  - ArrayName:       spikes
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        PIXEL_LOOP
+  - String:          ' '
+  - LoopLoc:         '../src/encoding.cpp:137:21'
+  - String:          ' '
+  - Function:        'delta_encoding(float*, signed char (*) [784], float, float)'
+    DebugLoc:        { File: ../src/encoding.cpp, Line: 120, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            CouldNotAnalyzePattern
+DebugLoc:        { File: ../src/encoding.cpp, Line: 137, Column: 21 }
+Function:        _Z14delta_encodingPfPA784_aff
+Args:            
+  - String:          Could not analyze pattern
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: ../src/encoding.cpp, Line: 137, Column: 21 }
+  - OrigDirection:   read
+  - OrigID:          img21seq
+  - ArrayName:       img
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        TIME_LOOP
+  - String:          ' '
+  - LoopLoc:         '../src/encoding.cpp:136:16'
+  - String:          ' '
+  - Function:        'delta_encoding(float*, signed char (*) [784], float, float)'
+    DebugLoc:        { File: ../src/encoding.cpp, Line: 120, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: ../src/encoding.cpp, Line: 137, Column: 21 }
+Function:        _Z14delta_encodingPfPA784_aff
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            float
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: ../src/encoding.cpp, Line: 137, Column: 21 }
+  - OrigDirection:   read
+  - OrigID:          img21seq
+  - ArrayName:       img
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        PIXEL_LOOP
+  - String:          ' '
+  - LoopLoc:         '../src/encoding.cpp:137:21'
+  - String:          ' '
+  - Function:        'delta_encoding(float*, signed char (*) [784], float, float)'
+    DebugLoc:        { File: ../src/encoding.cpp, Line: 120, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: ../src/encoding.cpp, Line: 137, Column: 21 }
+Function:        _Z14delta_encodingPfPA784_aff
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '784'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        PIXEL_LOOP
+  - String:          ' '
+  - LoopLoc:         '../src/encoding.cpp:137:21'
+  - String:          ' '
+  - Function:        'delta_encoding(float*, signed char (*) [784], float, float)'
+    DebugLoc:        { File: ../src/encoding.cpp, Line: 120, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: ../src/encoding.cpp, Line: 137, Column: 21 }
+Function:        _Z14delta_encodingPfPA784_aff
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '784'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' in loop '''
+  - LoopName:        PIXEL_LOOP
+  - String:          '''('
+  - LoopLoc:         '../src/encoding.cpp:137:21'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...

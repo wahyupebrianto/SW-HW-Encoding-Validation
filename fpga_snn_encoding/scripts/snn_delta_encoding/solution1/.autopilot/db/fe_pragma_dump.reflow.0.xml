@@ -1,0 +1,10 @@
+<pragmas>
+<pragma file="../src/encoding.cpp" line="138" pragmaType="pipeline" parentfunction="delta_encoding" off="0" ii="3" rewind="0" style=""/>
+<pragma file="../src/encoding.cpp" line="132" pragmaType="pipeline" parentfunction="delta_encoding" off="0" ii="1" rewind="0" style=""/>
+<pragma file="../src/encoding.cpp" line="121" pragmaType="interface" parentfunction="delta_encoding" mode="s_axilite" port="" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="../src/encoding.cpp" line="122" pragmaType="interface" parentfunction="delta_encoding" mode="m_axi" port="img" bundle="" offset="slave" name="" depth="784" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="../src/encoding.cpp" line="123" pragmaType="interface" parentfunction="delta_encoding" mode="m_axi" port="spikes" bundle="" offset="slave" name="" depth="19600" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="../src/encoding.cpp" line="124" pragmaType="interface" parentfunction="delta_encoding" mode="s_axilite" port="threshold" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="../src/encoding.cpp" line="125" pragmaType="interface" parentfunction="delta_encoding" mode="s_axilite" port="leak" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="../src/encoding.cpp" line="129" pragmaType="array_partition" parentfunction="delta_encoding" dim="1" factor="8" mode="cyclic" dynamic="0" variable="integrator"/>
+</pragmas>

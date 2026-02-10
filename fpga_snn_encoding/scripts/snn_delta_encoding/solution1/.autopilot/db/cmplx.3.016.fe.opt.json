@@ -1,0 +1,17 @@
+{
+  "0": {
+    "basicblocks": 51,
+    "calls": "",
+    "file": "encoding.cpp",
+    "fileloc": 115,
+    "instructions": 226,
+    "loads": {
+      "L": 8
+    },
+    "name": "delta_encoding",
+    "stores": {
+      "L": 32
+    },
+    "total_instructions": 226
+  }
+}

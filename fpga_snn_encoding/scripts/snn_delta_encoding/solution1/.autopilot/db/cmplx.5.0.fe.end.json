@@ -1,0 +1,47 @@
+{
+    "0": {
+        "name": "delta_encoding",
+        "file": "encoding.cpp",
+        "fileloc": "115",
+        "instructions": "37",
+        "total_instructions": "248",
+        "calls": "2 1",
+        "basicblocks": "1"
+    },
+    "1": {
+        "name": "delta_encoding_Pipeline_TIME_LOOP_PIXEL_LOOP",
+        "file": "..\/src\/encoding.cpp",
+        "fileloc": "136",
+        "instructions": "170",
+        "total_instructions": "170",
+        "calls": "",
+        "basicblocks": "38",
+        "loads": {
+            "L": "11"
+        },
+        "stores": {
+            "L": "30"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "2": {
+        "name": "delta_encoding_Pipeline_INIT_LOOP",
+        "file": "..\/src\/encoding.cpp",
+        "fileloc": "131",
+        "instructions": "41",
+        "total_instructions": "41",
+        "calls": "",
+        "basicblocks": "13",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "L": "10"
+        },
+        "loops": {
+            "L": "1"
+        }
+    }
+}

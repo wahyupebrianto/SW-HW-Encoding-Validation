@@ -1,0 +1,19 @@
+{
+  "0": {
+    "basicblocks": 5,
+    "calls": "",
+    "file": "encoding.cpp",
+    "fileloc": 42,
+    "instructions": 39,
+    "loads": {
+      "G": 1,
+      "T": 1
+    },
+    "name": "rate_encoding",
+    "stores": {
+      "G": 2,
+      "T": 1
+    },
+    "total_instructions": 39
+  }
+}

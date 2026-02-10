@@ -1,0 +1,48 @@
+{
+    "0": {
+        "name": "latency_encoding",
+        "file": "encoding.cpp",
+        "fileloc": "70",
+        "instructions": "21",
+        "total_instructions": "312",
+        "calls": "1 2",
+        "basicblocks": "1"
+    },
+    "1": {
+        "name": "latency_encoding_Pipeline_INIT_T_INIT_I",
+        "file": "..\/src\/encoding.cpp",
+        "fileloc": "81",
+        "instructions": "44",
+        "total_instructions": "44",
+        "calls": "",
+        "basicblocks": "4",
+        "loads": {
+            "L": "3"
+        },
+        "stores": {
+            "L": "6"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "2": {
+        "name": "latency_encoding_Pipeline_PIXEL_LOOP",
+        "file": "..\/src\/encoding.cpp",
+        "fileloc": "90",
+        "instructions": "247",
+        "total_instructions": "247",
+        "calls": "",
+        "basicblocks": "4",
+        "loads": {
+            "G": "4",
+            "L": "2"
+        },
+        "stores": {
+            "L": "4"
+        },
+        "loops": {
+            "L": "1"
+        }
+    }
+}
