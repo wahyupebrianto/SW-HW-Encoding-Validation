@@ -34,7 +34,6 @@ pip install torch torchvision snntorch numpy matplotlib
 
 ```bash
 git clone https://github.com/wahyupebrianto/SW-HW-Encoding-Validation.git
-cd fpga_snn_encoding_new
 
 cd sofware_snn_encoding
 python 2_training_evaluation.py
